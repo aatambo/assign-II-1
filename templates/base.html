@@ -1,0 +1,41 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <script type="text/javascript" src="{% static 'bootstrap-5/bootstrap.bundle.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-5/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-icons-1.8.1/bootstrap-icons.css' %}">
+    <!-- Title -->
+    <title>
+    {% block title %}
+    {% endblock title %}
+    </title>
+  </head>
+  <style>
+  body {
+  background-color: white;
+  color: #333;
+  margin: 0;
+  padding: 5px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  }
+  </style>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'csv-list' %}">Home</a>
+        <a class="navbar-brand" href="{% url 'csv-add' %}">Upload a File</a>
+      </div>
+    </nav>
+    <div class="container">
+      {% block content %}
+        
+      {% endblock content %}
+    </div>
+  </body>
+</html>
